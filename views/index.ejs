@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>SecDemo</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+  		<div class="container-fluid">
+  			<div class="navbar-header">
+  				<a class="navbar-brand" href="/">Secure Demo</a>
+  			</div>
+  			<div class="collapse navbar-collapse">
+  				<ul class="nav navbar-nav navbar-right">
+  					<li class="navbar-text">Logged in as <%= user.username %></li>
+  					<li><a href="/logout">Logout</a></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Documents</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Author</th>
+								<th>Date Created</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% documents.forEach(function(el, index) { %>
+								<tr>
+									<td><%= el.DOC_NAME %></td>
+									<td><%= el.AUTHOR %></td>
+									<td><%= el.DATE_CREATED %></td>
+								</tr>
+							<% }); %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
